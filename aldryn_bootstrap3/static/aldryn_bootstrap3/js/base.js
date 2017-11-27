@@ -252,7 +252,7 @@
                 var sizeContext = $('.field-btn_size');
                 var btnContext = $('.field-btn_context');
                 var colorContext = $('.field-txt_context');
-                var blockContext = $('.field-btn_block:not(.field-icon_left');
+                var blockContext = $('.field-btn_block:not(.field-icon_left)');
                 var iconContext = $('.js-icon-picker button');
 
                 // attach event to the label
