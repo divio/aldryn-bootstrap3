@@ -3,8 +3,8 @@ Changelog
 =========
 
 
-1.3.0 (unreleased)
-=================
+1.3.0 (2018-04-09)
+==================
 
 * Introduced Django 1.11 support
 * Fixed a bug where overriding ``Site.__str__`` resulted in invalid urls.
