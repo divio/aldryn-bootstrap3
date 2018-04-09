@@ -3,9 +3,10 @@ Changelog
 =========
 
 
-1.2.3 (unreleased)
+1.3.0 (unreleased)
 =================
 
+* Introduced Django 1.11 support
 * Fixed a bug where overriding ``Site.__str__`` resulted in invalid urls.
 * Fixed a bug in iconpicker that would prevent form submissions via keyboard
 * Fixed a bug in iconpicker when disabled prev/next buttons would be ignored
