@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3AlertPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('context', aldryn_bootstrap3.model_fields.Context(default='default', max_length=255)),
                 ('icon', aldryn_bootstrap3.model_fields.Icon(default='', max_length=255, blank=True)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3BlockquotePlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('reverse', models.BooleanField(default=False)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
@@ -52,7 +52,7 @@ class Migration(migrations.Migration):
                 ('link_mailto', models.EmailField(max_length=75, null=True, verbose_name='mailto', blank=True)),
                 ('link_phone', models.CharField(max_length=40, null=True, verbose_name='Phone', blank=True)),
                 ('link_target', models.CharField(blank=True, max_length=100, verbose_name='target', choices=[('', 'same window'), ('_blank', 'new window'), ('_parent', 'parent window'), ('_top', 'topmost frame')])),
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('label', models.CharField(default='', max_length=256, verbose_name='label', blank=True)),
                 ('type', aldryn_bootstrap3.model_fields.LinkOrButton(default='lnk', max_length=10)),
                 ('btn_context', aldryn_bootstrap3.model_fields.Context(default='default', max_length=255, verbose_name='context', blank=True, choices=[('default', 'Default'), ('primary', 'Primary'), ('success', 'Success'), ('info', 'Info'), ('warning', 'Warning'), ('danger', 'Danger'), ('link', 'Link Button'), ('', 'Custom')])),
@@ -75,7 +75,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3IconPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('icon', aldryn_bootstrap3.model_fields.Icon(default='', max_length=255, blank=True)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
@@ -87,7 +87,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3ImagePlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('alt', aldryn_bootstrap3.model_fields.MiniText(default='', verbose_name='alt', blank=True)),
                 ('title', aldryn_bootstrap3.model_fields.MiniText(default='', verbose_name='title', blank=True)),
                 ('aspect_ratio', models.CharField(default='', max_length=10, verbose_name='aspect ratio', blank=True, choices=[('1x1', '1x1'), ('4x3', '4x3'), ('16x9', '16x9'), ('16x10', '16x10'), ('21x9', '21x9'), ('1x1', '1x1'), ('3x4', '3x4'), ('9x16', '9x16'), ('10x16', '10x16'), ('9x21', '9x21')])),
@@ -105,7 +105,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3LabelPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('label', models.CharField(default='', max_length=256, verbose_name='label', blank=True)),
                 ('context', aldryn_bootstrap3.model_fields.Context(default='default', max_length=255, choices=[('default', 'Default'), ('primary', 'Primary'), ('success', 'Success'), ('info', 'Info'), ('warning', 'Warning'), ('danger', 'Danger')])),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
@@ -118,7 +118,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3PanelBodyPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
             options={
@@ -129,7 +129,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3PanelFooterPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
             options={
@@ -140,7 +140,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3PanelHeadingPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('title', aldryn_bootstrap3.model_fields.MiniText(default='', help_text='Alternatively you can add plugins', verbose_name='title', blank=True)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
@@ -152,7 +152,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3PanelPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('context', aldryn_bootstrap3.model_fields.Context(default='default', max_length=255, choices=[('default', 'Default'), ('primary', 'Primary'), ('success', 'Success'), ('info', 'Info'), ('warning', 'Warning'), ('danger', 'Danger')])),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
@@ -164,7 +164,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3SpacerPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('size', aldryn_bootstrap3.model_fields.Size(default='md', max_length=255, blank=True)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
@@ -176,7 +176,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Boostrap3WellPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('size', aldryn_bootstrap3.model_fields.Size(default='md', max_length=255, blank=True)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
@@ -188,7 +188,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3AccordionItemPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('title', aldryn_bootstrap3.model_fields.MiniText(default='', verbose_name='title', blank=True)),
                 ('context', aldryn_bootstrap3.model_fields.Context(default='default', max_length=255, choices=[('default', 'Default'), ('primary', 'Primary'), ('success', 'Success'), ('info', 'Info'), ('warning', 'Warning'), ('danger', 'Danger')])),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
@@ -201,7 +201,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3AccordionPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('index', models.PositiveIntegerField(help_text='index of element that should be opened on page load (leave it empty if none of the items should be opened)', null=True, verbose_name='index', blank=True)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
@@ -213,7 +213,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3CarouselPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('style', models.CharField(default='standard', max_length=50, verbose_name='Style', choices=[('standard', 'Standard')])),
                 ('aspect_ratio', models.CharField(default='', max_length=10, verbose_name='aspect ratio', blank=True, choices=[('1x1', '1x1'), ('4x3', '4x3'), ('16x9', '16x9'), ('16x10', '16x10'), ('21x9', '21x9'), ('1x1', '1x1'), ('3x4', '3x4'), ('9x16', '9x16'), ('10x16', '10x16'), ('9x21', '9x21')])),
                 ('transition_effect', models.CharField(default='', max_length=50, verbose_name='Transition Effect', blank=True, choices=[('slide', 'Slide')])),
@@ -231,7 +231,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3CarouselSlideFolderPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
                 ('folder', filer.fields.folder.FilerFolderField(verbose_name='folder', to='filer.Folder')),
             ],
@@ -243,7 +243,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3CarouselSlidePlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('link_url', models.URLField(default='', verbose_name='link', blank=True)),
                 ('link_anchor', models.CharField(help_text='Adds this value as an anchor (#my-anchor) to the link.', max_length=128, verbose_name='anchor', blank=True)),
                 ('link_mailto', models.EmailField(max_length=75, null=True, verbose_name='mailto', blank=True)),
@@ -264,7 +264,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3ColumnPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
                 ('tag', models.SlugField(default='div')),
                 ('xs_col', aldryn_bootstrap3.model_fields.IntegerField(default=None, null=True, verbose_name='col-xs-', blank=True)),
@@ -292,7 +292,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3ListGroupItemPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('title', aldryn_bootstrap3.model_fields.MiniText(default='', verbose_name='title', blank=True)),
                 ('context', aldryn_bootstrap3.model_fields.Context(default='', max_length=255, blank=True, choices=[('', 'None'), ('primary', 'Primary'), ('success', 'Success'), ('info', 'Info'), ('warning', 'Warning'), ('danger', 'Danger')])),
                 ('state', models.CharField(blank=True, max_length=255, verbose_name='state', choices=[('active', 'active'), ('disabled', 'disabled')])),
@@ -306,7 +306,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3ListGroupPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
                 ('add_list_group_class', models.BooleanField(default=True, help_text='whether to add the list-group and list-group-item classes', verbose_name='class: list-group')),
             ],
@@ -318,7 +318,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3RowPlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='space separated classes that are added to the class. see <a href="http://getbootstrap.com/css/" target="_blank">bootstrap docs</a>', blank=True)),
             ],
             options={

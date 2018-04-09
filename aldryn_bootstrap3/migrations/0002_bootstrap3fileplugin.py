@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Bootstrap3FilePlugin',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='+', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
                 ('name', aldryn_bootstrap3.model_fields.MiniText(default='', verbose_name='name', blank=True)),
                 ('open_new_window', models.BooleanField(default=False)),
                 ('show_file_size', models.BooleanField(default=False)),

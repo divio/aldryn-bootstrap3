@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('classes', aldryn_bootstrap3.model_fields.Classes(default='', help_text='Space separated classes that are added to the class. See <a href="http://getbootstrap.com/css/" target="_blank">Bootstrap 3 documentation</a>.', verbose_name='Classes', blank=True)),
                 ('attributes', djangocms_attributes_field.fields.AttributesField(default=dict, verbose_name='Attributes', blank=True)),
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3citeplugin', primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3citeplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
             ],
             options={
                 'abstract': False,
@@ -142,7 +142,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3alertplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3alertplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3alertplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3alertplugin',
@@ -157,7 +157,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3blockquoteplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3blockquoteplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3blockquoteplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3blockquoteplugin',
@@ -187,7 +187,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3buttonplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3buttonplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3buttonplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3buttonplugin',
@@ -257,7 +257,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3iconplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3iconplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3iconplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3imageplugin',
@@ -277,7 +277,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3imageplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3imageplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3imageplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3imageplugin',
@@ -327,7 +327,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3labelplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3labelplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3labelplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3labelplugin',
@@ -342,7 +342,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3panelbodyplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3panelbodyplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3panelbodyplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3panelfooterplugin',
@@ -352,7 +352,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3panelfooterplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3panelfooterplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3panelfooterplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3panelheadingplugin',
@@ -362,7 +362,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3panelheadingplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3panelheadingplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3panelheadingplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3panelheadingplugin',
@@ -377,7 +377,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3panelplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3panelplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3panelplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3spacerplugin',
@@ -387,7 +387,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3spacerplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3spacerplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3spacerplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3spacerplugin',
@@ -402,7 +402,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='boostrap3wellplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3wellplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_boostrap3wellplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='boostrap3wellplugin',
@@ -417,7 +417,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3accordionitemplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3accordionitemplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3accordionitemplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='bootstrap3accordionitemplugin',
@@ -432,7 +432,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3accordionplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3accordionplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3accordionplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='bootstrap3accordionplugin',
@@ -452,7 +452,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3carouselplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3carouselplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3carouselplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='bootstrap3carouselplugin',
@@ -482,7 +482,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3carouselslidefolderplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3carouselslidefolderplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3carouselslidefolderplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='bootstrap3carouselslidefolderplugin',
@@ -497,7 +497,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3carouselslideplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3carouselslideplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3carouselslideplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='bootstrap3carouselslideplugin',
@@ -552,7 +552,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3columnplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3columnplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3columnplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='bootstrap3columnplugin',
@@ -567,7 +567,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3fileplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3fileplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3fileplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='bootstrap3fileplugin',
@@ -597,7 +597,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3listgroupitemplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3listgroupitemplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3listgroupitemplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='bootstrap3listgroupitemplugin',
@@ -627,7 +627,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3listgroupplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3listgroupplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3listgroupplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
         migrations.AlterField(
             model_name='bootstrap3rowplugin',
@@ -637,6 +637,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bootstrap3rowplugin',
             name='cmsplugin_ptr',
-            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3rowplugin', primary_key=True, serialize=False, to='cms.CMSPlugin'),
+            field=models.OneToOneField(parent_link=True, related_name='aldryn_bootstrap3_bootstrap3rowplugin', primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE),
         ),
     ]

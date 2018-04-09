@@ -1,7 +1,14 @@
 <div class="btn-group btn-group-sizes js-btn-group-sizes" data-toggle="buttons">
-    {% for item in selects %}
-        {{ item }}
-    {% endfor %}
+	{% if widget %}
+	    {# Django 1.11+ #}
+	    {% for group, options, index in widget.optgroups %}
+	      {% for option in options %}
+	        {% include option.template_name with widget=option %}{% endfor %}
+	    {% endfor %}
+	{% elif selects %}
+	    {# Django < 1.11 #}
+	    {% for item in selects %}
+	        {{ item }}
+	    {% endfor %}
+	{% endif %}
 </div>
-
-{# selected: {{ selects.value }} #}

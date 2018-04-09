@@ -2,37 +2,36 @@
 from __future__ import unicode_literals, absolute_import
 
 import django.forms.widgets
+from django.template.loader import render_to_string
 
-from . import constants
 from .conf import settings
 
 
-class ContextRenderer(django.forms.widgets.RadioFieldRenderer):
-    def render(self):
-        from django.template.loader import render_to_string
-        rendered = render_to_string(
-            'admin/aldryn_bootstrap3/widgets/context.html',
-            {'selects': self},
-        )
-        return rendered
+class SelectFieldCompatMixin(object):
+    """
+    This class is only needed for Django < 1.11 compatibility
+    """
+
+    @property
+    def renderer(self):
+        class Renderer(django.forms.widgets.RadioFieldRenderer):
+            template_name = self.template_name
+
+            def render(self):
+                return render_to_string(self.template_name, {'selects': self})
+        return Renderer
 
 
-class Context(django.forms.widgets.RadioSelect):
-    renderer = ContextRenderer
+class Context(SelectFieldCompatMixin, django.forms.widgets.RadioSelect):
+    template_name = 'admin/aldryn_bootstrap3/widgets/context.html'
 
 
-class SizeRenderer(django.forms.widgets.RadioFieldRenderer):
-    def render(self):
-        from django.template.loader import render_to_string
-        rendered = render_to_string(
-            'admin/aldryn_bootstrap3/widgets/size.html',
-            {'selects': self},
-        )
-        return rendered
+class Size(SelectFieldCompatMixin, django.forms.widgets.RadioSelect):
+    template_name = 'admin/aldryn_bootstrap3/widgets/size.html'
 
 
-class Size(django.forms.widgets.RadioSelect):
-    renderer = SizeRenderer
+class LinkOrButton(SelectFieldCompatMixin, django.forms.widgets.RadioSelect):
+    template_name = 'admin/aldryn_bootstrap3/widgets/link_or_button.html'
 
 
 class Icon(django.forms.widgets.TextInput):
@@ -46,7 +45,6 @@ class Icon(django.forms.widgets.TextInput):
             # invalid iconset! maybe because the iconset was removed from
             # the project. set it to the first in the list.
             iconset = settings.ALDRYN_BOOTSTRAP3_ICONSETS[0][1]
-        from django.template.loader import render_to_string
         rendered = render_to_string(
             'admin/aldryn_bootstrap3/widgets/icon.html',
             {
@@ -70,23 +68,8 @@ class MiniTextarea(django.forms.widgets.Textarea):
         super(MiniTextarea, self).__init__(attrs)
 
 
-class LinkOrButtonRenderer(django.forms.widgets.RadioFieldRenderer):
-    def render(self):
-        from django.template.loader import render_to_string
-        rendered = render_to_string(
-            'admin/aldryn_bootstrap3/widgets/link_or_button.html',
-            {'selects': self},
-        )
-        return rendered
-
-
-class LinkOrButton(django.forms.widgets.RadioSelect):
-    renderer = LinkOrButtonRenderer
-
-
 class Responsive(django.forms.widgets.Textarea):
     def render(self, name, value, attrs=None):
-        from django.template.loader import render_to_string
         widget_html = super(Responsive, self).render(name=name, value=value, attrs=attrs)
 
         rendered = render_to_string(
@@ -105,7 +88,6 @@ class Responsive(django.forms.widgets.Textarea):
 
 class ResponsivePrint(django.forms.widgets.Textarea):
     def render(self, name, value, attrs=None):
-        from django.template.loader import render_to_string
         widget_html = super(ResponsivePrint, self).render(
             name=name, value=value, attrs=attrs)
 
